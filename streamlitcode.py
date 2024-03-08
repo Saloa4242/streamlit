@@ -41,7 +41,10 @@ if uploaded_file:
     prediction = get_prediction(img_bytes)
 
     #Display the prediction result
-    st.write(f"Prediction: {prediction}")
+    if prediction == "positive":
+        st.markdown(f"<h1 style='text-align: center; color: red;'>Prediction: {prediction}</h1>", unsafe_allow_html=True)
+    if prediction == "negative":
+        st.markdown(f"<h1 style='text-align: center; color: green;'>Prediction: {prediction}</h1>", unsafe_allow_html=True)
 background_image = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
