@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 import io
 #Define your classes for predictions
-classes = ['Positive', 'Negative']
+classes = ['positive', 'negative']
 
 def get_prediction(image_bytes):
      #Define the correct API endpoint URL
@@ -41,9 +41,9 @@ if uploaded_file:
     prediction = get_prediction(img_bytes)
 
     #Display the prediction result
-    if prediction == "Positive":
+    if prediction == "positive":
         st.markdown(f"<h1 style='text-align: center; color: red;'>{prediction}</h1>", unsafe_allow_html=True)
-    if prediction == "Negative":
+    if prediction == "negative":
         st.markdown(f"<h1 style='text-align: center; color: green;'>{prediction}</h1>", unsafe_allow_html=True)
 background_image = """
 <style>
