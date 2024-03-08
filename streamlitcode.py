@@ -24,12 +24,13 @@ def get_prediction(image_bytes):
 #Streamlit application setup
 st.set_page_config(page_title="Cancer Detection", page_icon="https://logos-world.net/wp-content/uploads/2022/03/Breast-Cancer-Logo.png", layout="wide")
 st.markdown("<h1 style='text-align: center; color: dark grey;'>Breast Cancer Detection API</h1>", unsafe_allow_html=True)
-button_clicked = st.button("Make a Donation!")
-
+st.markdown("""<style>
+ label {
+     font-weight : bold;
+     }
+    </style>""",unsafe_allow_html=True)
 # Check if the button is clicked
-if button_clicked:
-    st.write("Button clicked!")
-uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "jpeg", "png", "jfif"])
+uploaded_file = st.file_uploader("Kindly Upload your Radiographic Image...", type=["jpg", "jpeg", "png", "jfif"])
 if uploaded_file:
      #Display the uploaded image
     image = Image.open(io.BytesIO(uploaded_file.getvalue()))
@@ -52,3 +53,7 @@ background_image = """
 </style>
 """
 st.markdown(background_image, unsafe_allow_html=True)
+st.video('https://www.youtube.com/watch?v=zhKnW2ri33E')
+button_clicked = st.button("Make a Donation to Breast Cancer Research!")
+if button_clicked:
+    st.markdown("[Visit the website](https://www.contrelecancer.ma/fr/)")
