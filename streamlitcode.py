@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 import io
 #Define your classes for predictions
-classes = ['positive', 'negative']
+classes = ['Positive', 'Negative']
 
 def get_prediction(image_bytes):
      #Define the correct API endpoint URL
